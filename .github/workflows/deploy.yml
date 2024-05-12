@@ -53,6 +53,9 @@ jobs:
         run: |
           aws eks --region us-east-1 update-kubeconfig --name fiap-fastfood-eks
 
+      - name: create namespace
+        run: kubectl create namespace fiap-pos-tech
+
       # Aplicar a configuração do Kubernetes
       - name: Apply Kubernetes configuration
         run: kubectl apply -f infra-kubernetes/manifest.yaml
