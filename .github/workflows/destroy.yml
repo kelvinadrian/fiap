@@ -37,12 +37,12 @@ jobs:
       # Atualizar o kubeconfig para o cluster EKS
       - name: Set up EKS kubeconfig
         run: |
-          aws eks --region us-east-1 update-kubeconfig --name techchallenge-cluster-eks
+          aws eks --region us-east-1 update-kubeconfig --name fiap-fastfood-eks
 
       # Aplicar a configuração do Kubernetes
       - name: Apply Kubernetes configuration
         run: |
-          kubectl delete -f k8s/app.yaml
+          kubectl delete -f infra-kubernetes/manifest.yaml
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
