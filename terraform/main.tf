@@ -10,5 +10,5 @@ provider "kubernetes" {
 data "aws_availability_zones" "available" {}
 
 locals {
-  cluster_name = "fiap-fastfood-eks"
+  cluster_name = "fiap-fastfood-eks-novo"
 }
