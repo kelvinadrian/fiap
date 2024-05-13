@@ -21,12 +21,12 @@ jobs:
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v1
 
-      - name: Terraform Init
-        run: terraform init
-        working-directory: ./terraform
-
       - name: Terraform Format
         run: terraform fmt -check
+        working-directory: ./terraform
+
+      - name: Terraform Init
+        run: terraform init
         working-directory: ./terraform
 
       - name: Terraform Validate
